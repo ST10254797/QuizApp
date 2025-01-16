@@ -6,16 +6,43 @@
         xmlns:local="clr-namespace:QuizApp"
         mc:Ignorable="d"
         Title="QuizWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel Margin="20">
-            <TextBlock x:Name="QuestionTextBlock" FontSize="16" TextWrapping="Wrap" Margin="0,0,0,10"/>
-            
-            <RadioButton x:Name="Option1" Content="Option 1" GroupName="Answers" FontSize="14"/>
-            <RadioButton x:Name="Option2" Content="Option 2" GroupName="Answers" FontSize="14"/>
-            <RadioButton x:Name="Option3" Content="Option 3" GroupName="Answers" FontSize="14"/>
-            <RadioButton x:Name="Option4" Content="Option 4" GroupName="Answers" FontSize="14"/>
+    <Window.Resources>
+        <Style TargetType="RadioButton">
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="#F0F0F0"/>
+            <Setter Property="BorderBrush" Value="#B0B0B0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
 
-            <Button Content="Next Question" Width="150" Height="30" HorizontalAlignment="Right" Click="NextQuestion_Click"/>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="#4CAF50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderBrush" Value="#4CAF50"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#F9F9F9">
+        <StackPanel Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Question Text -->
+            <TextBlock x:Name="QuestionTextBlock" FontSize="18" TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+            <!-- Radio Buttons for Options -->
+            <RadioButton x:Name="Option1" Content="Option 1" GroupName="Answers"/>
+            <RadioButton x:Name="Option2" Content="Option 2" GroupName="Answers"/>
+            <RadioButton x:Name="Option3" Content="Option 3" GroupName="Answers"/>
+            <RadioButton x:Name="Option4" Content="Option 4" GroupName="Answers"/>
+
+            <!-- Next Question Button -->
+            <Button Content="Next Question" HorizontalAlignment="Center" Click="NextQuestion_Click"/>
         </StackPanel>
     </Grid>
 </Window>
