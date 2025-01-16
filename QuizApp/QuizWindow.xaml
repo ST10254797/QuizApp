@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="QuizWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Margin="20" Spacing="10">
+            <TextBlock x:Name="QuestionTextBlock" FontSize="16" TextWrapping="Wrap" />
+
+            <RadioButton x:Name="Option1" Content="Option 1" GroupName="Answers" FontSize="14"/>
+            <RadioButton x:Name="Option2" Content="Option 2" GroupName="Answers" FontSize="14"/>
+            <RadioButton x:Name="Option3" Content="Option 3" GroupName="Answers" FontSize="14"/>
+            <RadioButton x:Name="Option4" Content="Option 4" GroupName="Answers" FontSize="14"/>
+
+            <Button Content="Next Question" Width="150" Height="30" HorizontalAlignment="Right" Click="NextQuestion_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
