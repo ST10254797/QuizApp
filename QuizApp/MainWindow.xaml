@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+            <Button Content="Load Quiz" Width="150" Height="30" Click="LoadQuiz_Click"/>
+            <Button Content="Start Quiz" Width="150" Height="30" Click="StartQuiz_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
