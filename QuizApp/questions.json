@@ -1,27 +1,32 @@
 [
   {
     "QuestionText": "What is the capital of France?",
-    "Options": ["Paris", "Berlin", "Madrid", "Rome"],
+    "QuestionType": "MCQ",
+    "Options": [ "Paris", "Berlin", "Madrid", "Rome" ],
     "CorrectAnswer": "Paris"
   },
   {
     "QuestionText": "Which planet is known as the Red Planet?",
-    "Options": ["Earth", "Mars", "Jupiter", "Venus"],
+    "QuestionType": "MCQ",
+    "Options": [ "Earth", "Mars", "Jupiter", "Venus" ],
     "CorrectAnswer": "Mars"
   },
   {
     "QuestionText": "What is the square root of 64?",
-    "Options": ["6", "7", "8", "9"],
+    "QuestionType": "MCQ",
+    "Options": [ "6", "7", "8", "9" ],
     "CorrectAnswer": "8"
   },
   {
     "QuestionText": "Who wrote 'Romeo and Juliet'?",
-    "Options": ["William Shakespeare", "Mark Twain", "Charles Dickens", "Jane Austen"],
+    "QuestionType": "MCQ",
+    "Options": [ "William Shakespeare", "Mark Twain", "Charles Dickens", "Jane Austen" ],
     "CorrectAnswer": "William Shakespeare"
   },
   {
     "QuestionText": "What is the chemical symbol for water?",
-    "Options": ["O2", "H2O", "CO2", "HO"],
+    "QuestionType": "MCQ",
+    "Options": [ "O2", "H2O", "CO2", "HO" ],
     "CorrectAnswer": "H2O"
   }
 ]

@@ -9,11 +9,11 @@
     <Grid>
         <StackPanel Margin="20">
             <TextBlock x:Name="QuestionTextBlock" FontSize="16" TextWrapping="Wrap" Margin="0,0,0,10"/>
-
-            <RadioButton x:Name="Option1" Content="Option 1" GroupName="Answers" FontSize="14" Margin="0,0,0,5"/>
-            <RadioButton x:Name="Option2" Content="Option 2" GroupName="Answers" FontSize="14" Margin="0,0,0,5"/>
-            <RadioButton x:Name="Option3" Content="Option 3" GroupName="Answers" FontSize="14" Margin="0,0,0,5"/>
-            <RadioButton x:Name="Option4" Content="Option 4" GroupName="Answers" FontSize="14" Margin="0,0,0,10"/>
+            
+            <RadioButton x:Name="Option1" Content="Option 1" GroupName="Answers" FontSize="14"/>
+            <RadioButton x:Name="Option2" Content="Option 2" GroupName="Answers" FontSize="14"/>
+            <RadioButton x:Name="Option3" Content="Option 3" GroupName="Answers" FontSize="14"/>
+            <RadioButton x:Name="Option4" Content="Option 4" GroupName="Answers" FontSize="14"/>
 
             <Button Content="Next Question" Width="150" Height="30" HorizontalAlignment="Right" Click="NextQuestion_Click"/>
         </StackPanel>
