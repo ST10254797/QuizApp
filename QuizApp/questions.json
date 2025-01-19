@@ -28,5 +28,65 @@
     "QuestionType": "MCQ",
     "Options": [ "O2", "H2O", "CO2", "HO" ],
     "CorrectAnswer": "H2O"
+  },
+  {
+    "QuestionText": "Which gas do plants absorb from the atmosphere during photosynthesis?",
+    "QuestionType": "MCQ",
+    "Options": [ "Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen" ],
+    "CorrectAnswer": "Carbon Dioxide"
+  },
+  {
+    "QuestionText": "What is the largest mammal in the world?",
+    "QuestionType": "MCQ",
+    "Options": [ "African Elephant", "Blue Whale", "Giraffe", "Hippopotamus" ],
+    "CorrectAnswer": "Blue Whale"
+  },
+  {
+    "QuestionText": "What is 15 multiplied by 6?",
+    "QuestionType": "MCQ",
+    "Options": [ "80", "85", "90", "95" ],
+    "CorrectAnswer": "90"
+  },
+  {
+    "QuestionText": "Who painted the Mona Lisa?",
+    "QuestionType": "MCQ",
+    "Options": [ "Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet" ],
+    "CorrectAnswer": "Leonardo da Vinci"
+  },
+  {
+    "QuestionText": "In which year did World War II end?",
+    "QuestionType": "MCQ",
+    "Options": [ "1942", "1945", "1947", "1950" ],
+    "CorrectAnswer": "1945"
+  },
+  {
+    "QuestionText": "What is the powerhouse of the cell?",
+    "QuestionType": "MCQ",
+    "Options": [ "Nucleus", "Mitochondria", "Ribosome", "Golgi Apparatus" ],
+    "CorrectAnswer": "Mitochondria"
+  },
+  {
+    "QuestionText": "Which country is known as the Land of the Rising Sun?",
+    "QuestionType": "MCQ",
+    "Options": [ "China", "Japan", "India", "Thailand" ],
+    "CorrectAnswer": "Japan"
+  },
+  {
+    "QuestionText": "What is the freezing point of water in Celsius?",
+    "QuestionType": "MCQ",
+    "Options": [ "0", "32", "100", "-10" ],
+    "CorrectAnswer": "0"
+  },
+  {
+    "QuestionText": "Who discovered gravity when he saw a falling apple?",
+    "QuestionType": "MCQ",
+    "Options": [ "Albert Einstein", "Galileo Galilei", "Isaac Newton", "Nikola Tesla" ],
+    "CorrectAnswer": "Isaac Newton"
+  },
+  {
+    "QuestionText": "Which element has the chemical symbol 'Au'?",
+    "QuestionType": "MCQ",
+    "Options": [ "Silver", "Gold", "Aluminum", "Argon" ],
+    "CorrectAnswer": "Gold"
   }
 ]
