@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq; // For OrderBy
+using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -47,13 +47,15 @@ namespace QuizApp
             TimerTextBlock.Text = $"Time Left: {timeLeft}s"; // Update timer display
             timer.Start(); // Start the timer
 
-            // Handling MCQ Questions
+            // Shuffle options if the question is MCQ
             if (question.QuestionType == "MCQ")
             {
-                Option1.Content = question.Options[0];
-                Option2.Content = question.Options[1];
-                Option3.Content = question.Options[2];
-                Option4.Content = question.Options[3];
+                var shuffledOptions = question.Options.OrderBy(o => Guid.NewGuid()).ToList();
+
+                Option1.Content = shuffledOptions[0];
+                Option2.Content = shuffledOptions[1];
+                Option3.Content = shuffledOptions[2];
+                Option4.Content = shuffledOptions[3];
 
                 // Ensure all options are visible for MCQ
                 Option1.Visibility = Visibility.Visible;
