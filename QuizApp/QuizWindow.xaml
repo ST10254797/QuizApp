@@ -32,6 +32,15 @@
 
     <Grid Background="#F9F9F9">
         <StackPanel Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Timer Display -->
+            <TextBlock x:Name="TimerTextBlock" 
+                       FontSize="14" 
+                       FontWeight="Bold" 
+                       Foreground="Red" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,0,10"
+                       Text="Time Left: 15s"/>
+
             <!-- Question Text -->
             <TextBlock x:Name="QuestionTextBlock" FontSize="18" TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
 
