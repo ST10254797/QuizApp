@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace QuizApp
 {
@@ -10,10 +11,19 @@ namespace QuizApp
         private int currentQuestionIndex = 0;
         private int score = 0;
 
+        private DispatcherTimer timer; // Timer for question countdown
+        private int timeLeft = 15; // Time limit per question (in seconds)
+
         public QuizWindow(List<Question> questions)
         {
             InitializeComponent();
             this.questions = questions;
+
+            // Initialize and configure the timer
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1); // Tick every second
+            timer.Tick += Timer_Tick;
+
             LoadQuestion();
         }
 
@@ -28,6 +38,11 @@ namespace QuizApp
 
             var question = questions[currentQuestionIndex];
             QuestionTextBlock.Text = question.QuestionText;
+
+            // Reset timer for the new question
+            timeLeft = 15; // Reset to 15 seconds
+            TimerTextBlock.Text = $"Time Left: {timeLeft}s"; // Update timer display
+            timer.Start(); // Start the timer
 
             // Handling MCQ Questions
             if (question.QuestionType == "MCQ")
@@ -54,8 +69,25 @@ namespace QuizApp
                 Option4.Visibility = Visibility.Collapsed;
             }
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            timeLeft--; // Decrement the time left
+            TimerTextBlock.Text = $"Time Left: {timeLeft}s"; // Update timer display
+
+            if (timeLeft <= 0)
+            {
+                timer.Stop(); // Stop the timer
+                MessageBox.Show("Time's up for this question!");
+                currentQuestionIndex++; // Move to the next question
+                LoadQuestion(); // Load the next question
+            }
+        }
+
         private void NextQuestion_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop(); // Stop the timer when manually moving to the next question
+
             string selectedAnswer = null;
 
             // Check which option is selected
@@ -79,6 +111,5 @@ namespace QuizApp
             currentQuestionIndex++;
             LoadQuestion();
         }
-
     }
 }
