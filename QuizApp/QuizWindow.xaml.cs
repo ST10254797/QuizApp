@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq; // For OrderBy
 using System.Windows;
 using System.Windows.Threading;
 
@@ -17,7 +18,9 @@ namespace QuizApp
         public QuizWindow(List<Question> questions)
         {
             InitializeComponent();
-            this.questions = questions;
+
+            // Shuffle the questions before starting the quiz
+            this.questions = questions.OrderBy(q => Guid.NewGuid()).ToList();
 
             // Initialize and configure the timer
             timer = new DispatcherTimer();
