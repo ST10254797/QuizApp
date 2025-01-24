@@ -50,8 +50,16 @@
             <RadioButton x:Name="Option3" Content="Option 3" GroupName="Answers"/>
             <RadioButton x:Name="Option4" Content="Option 4" GroupName="Answers"/>
 
-            <!-- Next Question Button -->
-            <Button Content="Next Question" HorizontalAlignment="Center" Click="NextQuestion_Click"/>
+            <!-- Buttons for Skip and Next -->
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="SkipButton" Content="Skip" Background="#FFA500" Grid.Column="0" HorizontalAlignment="Left" Click="SkipQuestion_Click"/>
+                <Button Content="Next Question" Grid.Column="1" HorizontalAlignment="Right" Click="NextQuestion_Click"/>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
