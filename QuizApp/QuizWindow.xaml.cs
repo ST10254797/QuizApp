@@ -12,6 +12,9 @@ namespace QuizApp
         private int currentQuestionIndex = 0;
         private int score = 0;
 
+        private List<int> skippedQuestions = new List<int>();
+
+
         private DispatcherTimer timer; // Timer for question countdown
         private int timeLeft = 15; // Time limit per question (in seconds)
 
@@ -32,11 +35,21 @@ namespace QuizApp
 
         private void LoadQuestion()
         {
+            // Check if the current question index exceeds the number of questions
             if (currentQuestionIndex >= questions.Count)
             {
-                MessageBox.Show($"Quiz finished! Your score: {score}/{questions.Count}");
-                this.Close();
-                return;
+                // If there are skipped questions, go back to them
+                if (skippedQuestions.Count > 0)
+                {
+                    currentQuestionIndex = skippedQuestions[0]; // Get the first skipped question
+                    skippedQuestions.RemoveAt(0); // Remove it from the skippedQuestions list
+                }
+                else
+                {
+                    MessageBox.Show($"Quiz finished! Your score: {score}/{questions.Count}");
+                    this.Close();
+                    return;
+                }
             }
 
             var question = questions[currentQuestionIndex];
@@ -74,6 +87,7 @@ namespace QuizApp
                 Option4.Visibility = Visibility.Collapsed;
             }
         }
+
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -116,5 +130,15 @@ namespace QuizApp
             currentQuestionIndex++;
             LoadQuestion();
         }
+        private void SkipQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            // Add the current question to the skippedQuestions list
+            skippedQuestions.Add(currentQuestionIndex);
+
+            // Move to the next question
+            currentQuestionIndex++;
+            LoadQuestion();
+        }
+
     }
 }
